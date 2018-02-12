@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Change Me</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Fantasy Football X-treme League</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    
-    <h1>Change Me</h1>
 
-<script src="app/app.js"></script>
-<script src="app/service.js"></script>
-<script src="app/controller.js"></script>
+<body>
+    <div class="container">
+        <!--header-->
+        <div class="row">
+            <div class="col-sm-12 header">
+                <div>
+                    <h1>Welcome Football Fans!</h1>
+                </div>
+            </div>
+        </div>
+        <!--Section-->
+        <div class="row outline">
+            <div class="col-sm-12">
+                <h3>Let's pick your team to get started.</h3>
+                <form onsubmit="app.controllers.playerCtrl.search(event)">
+                    <input type="text" placeholder="Team Name Search" name="team">
+                    <input type="text" placeholder="Player Search" name="player">
+                    <input type="text" placeholder="Position Search" name="position">
+                    <button type="submit">Search Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row section outline">
+            <div class="col-sm-12 ">
+                <h1>My Team consists of these Players...</h1>
+                <div class="row" id="my-team"></div>
+                <h4>
+                    <span id="newMemberAdded"></span>...</h4>
+            </div>
+            <div class="col">
+                <p>Remaining Players to choose...</p>
+            </div>
+        </div>
+
+        <div class="row" id="Players">
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-sm-12 footer copyright">
+                <h5>©ResearchDrivenMarketing 2018</h5>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--<div class="row">
+   <div class="col">
+        <form class="form-group form-inline">
+            <label for="select-team" class="control-label">Team:</label>
+                        <select class="form-control" id="select-team" onclick="app.controllers.playerCtrl.drawTeamDropDown()">
+                            <option value="null">SELECT TEAM</option>
+                            <span id="teams">...</span>
+
+                        </select>
+                        <button type="button" value="someTeam" onclick="app.controllers.playerCtrl.search(event)">Click Me!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--Footer-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="app/service.js"></script>
+    <script src="app/controller.js"></script>
+    <script src="app/app.js"></script>
 </body>
+
 </html>
