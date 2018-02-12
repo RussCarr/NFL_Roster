@@ -13,11 +13,11 @@ function PlayersService(callback) {
 
         for (var i = 0; i < myTeam.length; i++) {
             var myTeamPlayer = myTeam[i]
-           
+
             var i = myTeam.indexOf(myTeamPlayer)
 
             myTeam.splice(i, 1)
-            console.log(myTeam)
+           // console.log(myTeam)
 
 
 
@@ -32,33 +32,46 @@ function PlayersService(callback) {
                 playerPosition: position,
                 playerPhoto: photo,
             })
-        console.log(myTeam)
+        //console.log(myTeam)
     }
 
     this.getPlayersBySearch = function (team, player, position) {
+        //debugger
         if (position == "" && player == "") {
-            filteredPlayers = playersData.filter(function (player) {
-                if (player.pro_team == team) {
+            filteredPlayers = playersData.filter(function (nflPlayer) {
+                if (nflPlayer.pro_team == team) {
                     return true;
                 }
             });
 
         } else if (team == "" && player == "") {
-            filteredPlayers = playersData.filter(function (player) {
-                if (player.position == position) {
+            filteredPlayers = playersData.filter(function (nflPlayer) {
+                if (nflPlayer.position == position) {
                     return true;
                 }
             });
         } else if (position == "" && team == "") {
-            filteredPlayers = playersData.filter(function (player) {
-                if (player.firstname === player || player.lastname === player) {
+            filteredPlayers = playersData.filter(function (nflPlayer) {
+                if (nflPlayer.firstname == player || nflPlayer.lastname == player) {
 
                     return true;
                 }
             });
-        }
+            //} else filteredPlayers = playersData.filter(function (nflPlayer) {
+            //    if (nflPlayer.firstname == player || nflPlayer.lastname == player && nflPlayer.pro_team == team) {
 
-        return filteredPlayers
+
+            //    } else if (nflPlayer.pro_team == team && nflPlayer.position) {
+            //        return true;
+
+            //    } else (nflPlayer.firstname == player || nflPlayer.lastname == player && nflPlayer.position == position); {
+            //        return true;
+
+            //    }
+
+            //});
+        }
+        return filteredPlayers;
     }
 
 
